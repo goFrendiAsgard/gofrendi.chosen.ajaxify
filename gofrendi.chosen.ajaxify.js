@@ -12,13 +12,14 @@ function chosen_ajaxify(id, ajax_url){
     console.log($('.chosen-search input').autocomplete);
     $('div#' + id + '_chosen .chosen-search input').keyup(function(){
         var keyword = $(this).val();
-        //$('div#' + id + '_chosen ul.chosen-results').empty();
+        var keyword_pattern = new RegExp(keyword, 'gi');
+        $('div#' + id + '_chosen ul.chosen-results').empty();
         $("#"+id).empty();
         $.ajax({
             url: ajax_url + keyword,
             dataType: "json",
             success: function(response){
-                // MAP, just as in functional programming :)
+                // map, just as in functional programming :). Other way to say "foreach"
                 $.map(response, function(item){
                     $('#'+id).append('<option value="' + item.value + '">' + item.caption + '</option>');
                 });
@@ -27,7 +28,13 @@ function chosen_ajaxify(id, ajax_url){
                 $('div#' + id + '_chosen .chosen-search input').val(keyword);
                 $('div#' + id + '_chosen .chosen-search input').removeAttr('readonly');
                 $('div#' + id + '_chosen .chosen-search input').focus();
-
+                // put that underscores
+                $('div#' + id + '_chosen .active-result').each(function(){
+                    var html = $(this).html();
+                    $(this).html(html.replace(keyword_pattern, function(matched){
+                        return '<em>' + matched + '</em>';
+                    }));
+                });
             }
         });
     });

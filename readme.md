@@ -98,4 +98,4 @@ The expected response is array of object(or associative array) in JSON format. T
 
 ## Todo
 
-* Add underscores to the options.
+* Make this an extension of jquery chosen
