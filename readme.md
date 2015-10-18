@@ -82,11 +82,11 @@ chosen_ajaxify(ID, URL);
     For example, if your URL is `server.php?keyword=`, and your `keyword` is `indonesia`, then the response from `server.php?keyword=indonesia` will be used to populate your `chosen-select`.
 
 
- ## Expected Response From Server
+## Expected Response From Server
 
- The expected response is array of object(or associative array) in JSON format. The Objects should have two keys, `value` and `caption`. i.e:
+The expected response is array of object(or associative array) in JSON format. The Objects should have two keys, `value` and `caption`. i.e:
 
- ```json
+```json
  [
      {"value":"Afghanistan","caption":"Afghanistan"},
      {"value":"Albania","caption":"Albania"},
@@ -96,6 +96,6 @@ chosen_ajaxify(ID, URL);
  ]
  ```
 
- ## Todo
+## Todo
 
- * Add underscores to the options.
+* Add underscores to the options.
