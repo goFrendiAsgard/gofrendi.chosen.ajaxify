@@ -55,7 +55,7 @@ So, I decide to make my own. This might not the best quality plugin you ever see
         </div>
         <script type="text/javascript" src="../jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="../chosen/chosen.jquery.min.js"></script>
-        <! -- Beside chosen and jquer, you also need to include this: -->
+        <!-- Beside chosen and jquer, you also need to include this: -->
         <script type="text/javascript" src="../gofrendi.chosen.ajaxify.js"></script>
         <script type="text/javascript">
             // This is how you usually use chosen
