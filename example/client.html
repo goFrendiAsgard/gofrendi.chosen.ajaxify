@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../chosen/chosen.min.css">
+    </head>
+    <body>
+        <div>
+            This is a normal select :
+            <select id="normal_select">
+                <option value="Indonesia">Indonesia</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Philippines">Philippines</option>
+            </select>
+        </div>
+        <div>
+            This is a normal select, turn into chosen :
+            <select id="chosen_select">
+                <option value="Indonesia">Indonesia</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Philippines">Philippines</option>
+            </select>
+        </div>
+        <div>
+            This is a normal select, turn into ajax-chosen :
+            <select id="ajax_select">
+                <option value="Indonesia">Indonesia</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Philippines">Philippines</option>
+            </select>
+        </div>
+        <script type="text/javascript" src="../jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../chosen/chosen.jquery.min.js"></script>
+        <script type="text/javascript" src="../gofrendi.chosen.ajaxify.js"></script>
+        <script type="text/javascript">
+            $('#chosen_select').chosen({allow_single_deselect:true, width:"200px", search_contains: true});
+            $('#ajax_select').chosen({allow_single_deselect:true, width:"200px", search_contains: true});
+            chosen_ajaxify('ajax_select', 'server.php?keyword=');
+        </script>
+    </body>
+</html>
