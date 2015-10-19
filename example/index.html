@@ -11,10 +11,22 @@
                 <option value="Japan">Japan</option>
                 <option value="Philippines">Philippines</option>
             </select>
+            <select id="normal_multi_select" multiple>
+                <option value="Indonesia">Indonesia</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Philippines">Philippines</option>
+            </select>
         </div>
         <div>
             This is a normal select, turn into chosen :
             <select id="chosen_select">
+                <option value="Indonesia">Indonesia</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Philippines">Philippines</option>
+            </select>
+            <select id="chosen_multi_select" multiple>
                 <option value="Indonesia">Indonesia</option>
                 <option value="India">India</option>
                 <option value="Japan">Japan</option>
@@ -29,14 +41,25 @@
                 <option value="Japan">Japan</option>
                 <option value="Philippines">Philippines</option>
             </select>
+            <select id="ajax_multi_select" multiple>
+                <option value="Indonesia">Indonesia</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Philippines">Philippines</option>
+            </select>
         </div>
         <script type="text/javascript" src="../jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="../chosen/chosen.jquery.min.js"></script>
         <script type="text/javascript" src="../gofrendi.chosen.ajaxify.js"></script>
         <script type="text/javascript">
             $('#chosen_select').chosen({allow_single_deselect:true, width:"200px", search_contains: true});
+            $('#chosen_multi_select').chosen({allow_single_deselect:true, width:"200px", search_contains: true});
+
             $('#ajax_select').chosen({allow_single_deselect:true, width:"200px", search_contains: true});
             chosen_ajaxify('ajax_select', 'server.php?keyword=');
+
+            $('#ajax_multi_select').chosen({allow_single_deselect:true, width:"200px", search_contains: true});
+            chosen_ajaxify('ajax_multi_select', 'server.php?keyword=');
         </script>
     </body>
 </html>
