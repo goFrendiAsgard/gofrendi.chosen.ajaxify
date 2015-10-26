@@ -1,4 +1,5 @@
 <?php
+//sleep(2); // emulate slow network
 // get the keyword
 $keyword = isset($_GET['keyword'])? $_GET['keyword'] : '';
 
