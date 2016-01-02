@@ -34,19 +34,22 @@
             </select>
         </div>
         <div>
-            This is a normal select, turn into ajax-chosen :
-            <select id="ajax_select">
-                <option value="Indonesia">Indonesia</option>
-                <option value="India">India</option>
-                <option value="Japan">Japan</option>
-                <option value="Philippines">Philippines</option>
-            </select>
-            <select id="ajax_multi_select" multiple>
-                <option value="Indonesia">Indonesia</option>
-                <option value="India">India</option>
-                <option value="Japan">Japan</option>
-                <option value="Philippines">Philippines</option>
-            </select>
+            <form method="post" action="../example/submit.php">
+                This is a normal select, turn into ajax-chosen :
+                <select id="ajax_select" name="ajax_select">
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="India">India</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Philippines">Philippines</option>
+                </select>
+                <select id="ajax_multi_select" name="ajax_multi_select[]" multiple>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="India">India</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Philippines">Philippines</option>
+                </select>
+                <button>Submit</button>
+            </form>
         </div>
         <script type="text/javascript" src="../jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="../chosen/chosen.jquery.min.js"></script>
