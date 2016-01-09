@@ -96,6 +96,52 @@ The expected response is array of object(or associative array) in JSON format. T
  ]
  ```
 
+## chosen_depend_on (bonus)
+
+### Parameter
+
+```javascript
+chosen_depend_on(ID, ID_DEPEND_ON, URL);
+```
+
+### Example:
+```html
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../chosen/chosen.min.css">
+    </head>
+    <body>
+        <div>
+            This Country :
+            <select id="country_select">
+                <option value="Indonesia">Indonesia</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Philippines">Philippines</option>
+            </select>
+        </div>
+        <div>
+            City :
+            <select id="city_select"></select>
+        </div>
+        <script type="text/javascript" src="../jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../chosen/chosen.jquery.min.js"></script>
+        <!-- Beside chosen and jquer, you also need to include this: -->
+        <script type="text/javascript" src="../gofrendi.chosen.ajaxify.js"></script>
+        <script type="text/javascript">
+            // This is how you usually use chosen
+            $('#country_select').chosen({allow_single_deselect:true, width:"200px", search_contains: true});
+
+            // This is also how you usually use chosen
+            $('#city_select').chosen({allow_single_deselect:true, width:"200px", search_contains: true});
+            // And this one is how you add AJAX capability
+            chosen_depend_on('city_select', 'country_select' 'city_list.php?country=');
+        </script>
+    </body>
+</html>
+```
+
+
 ## Todo
 
 * Make this an extension of jquery chosen
