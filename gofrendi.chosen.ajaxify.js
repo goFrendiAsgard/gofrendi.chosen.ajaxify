@@ -194,6 +194,7 @@ function chosen_depend_on(id, id_depend_on, ajax_url){
                         $('#'+id).append('<option value="' + item.value + '">' + item.caption + '</option>');
                     });
                     $('#'+id).trigger("chosen:updated");
+                    $('#'+id).trigger("change");
                 }
             });
         }
